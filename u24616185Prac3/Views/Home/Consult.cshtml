@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Consultation";
+}
+
+<h2>Book a consultation with your lecturer.</h2>
+
+<br />
+
+<form asp-action="Consult" method="post" class="needs-validation" novalidate>
+
+    <h4>Your details</h4>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="Firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="Firstname" name="Firstname" required />
+            <div class="invalid-feedback">
+                First Name is required.
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="Lastname" name="Lastname" required />
+            <div class="invalid-feedback">
+                Last Name is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Email Field: 75% Width -->
+        <div class="col-md-9 mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="example@example.com" required />
+            <div class="invalid-feedback">
+                A valid email address is required.
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Comments Section -->
+    <div class="mb-3">
+        <label for="Comments" class="form-label">Comments</label>
+        <textarea class="form-control" id="Comments" name="Comments" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<!-- Bootstrap validation script -->
+<script>
+    // Disable form submissions if there are invalid fields
+    (function () {
+        'use strict'
+        // Get all the forms we want to apply validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission if invalid
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>

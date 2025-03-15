@@ -25,5 +25,11 @@ namespace u24616185Prac3.Controllers
             
             return View();
         }
+
+        public ActionResult Consult()
+        {
+
+            return View();
+        }
     }
 }

@@ -2,12 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
+<head>
+    <style>
+        @@media (max-width: 700px) {
+            .responsive-carousel {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+
+
 <div class="mt-4 p-5 bg-primary text-white rounded">
     <h3>Welcome to the Responsive Web Design, Lecture: 5 of INF272.</h3>
     <p>In this lecture you will learn the basics of Responsive Web Design.</p>
 </div>
 
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="myCarousel" class="carousel slide responsive-carousel" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
